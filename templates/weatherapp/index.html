@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <meta name="description" content="description"/>
+    <meta name="author" content="author" />
+    <meta name="keywords" content="keywords" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css" />
+  </head>
+  <body>
+    <!-- <form action="" method="POST">
+      {% csrf_token %}
+      <input type="text" placeholder="Enter City" name="city">
+      <button type="submit">Search</button>
+    </form>
+    <h1>{{description}}</h1>
+    <h1>{{temp}}</h1>
+    <h2>{{day}}</h2>
+    <h1>{{city}}</h1>
+    <img src="https://openweathermap.org/img/w/{{icon}}.png" width="100px"> -->
+
+    <div class="container">
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input type="text" name="city" placeholder="Enter City">
+        <button type="submit" class="btn">Enter</button>
+      </form>
+      <div class="weather">
+        <div class="left">
+          <h2>{{temp}} &deg;</h2>
+          <h3>{{city}}</h3>
+        </div>
+        <div class="right">
+          <div class="icon">
+            <img src="https://openweathermap.org/img/w/{{icon}}.png" width="100px">
+          </div>
+          <div class="condition">
+            <p>{{description}}</p>
+            <p>{{day}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>
